@@ -9,9 +9,23 @@ class MockController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function account()
+    public function account(Request $request)
     {
+
         return view('settings.account');
+    }
+
+
+
+
+
+    public function updateAccount(Request $request)
+    {
+        $url_name = $request->input('url_name');
+
+        return view('name');
+
+
     }
 
     /**
@@ -53,4 +67,6 @@ class MockController extends Controller
     {
         return view('user.followers');
     }
+
+
 }

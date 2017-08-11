@@ -5,30 +5,32 @@
         <div class="card card-profile mb-4">
             <div class="card-header bg-danger"></div>
             <div class="card-block text-center">
-                <a href="#">
+                <a href="profile">
                     <img class="avatar card-profile-img" src="{{ asset('images/no-thumb.png') }}">
                 </a>
 
                 <div class="card-title my-2">
-                    <a href="#" class="font-weight-bold text-inherit d-block">
+                    <a href="account" class="font-weight-bold text-inherit d-block">
                         snicmakino
                     </a>
-                    <a href="#" class="text-inherit">
+                    <a href="account" class="text-inherit">
                         &#64;snicmakino
                     </a>
                 </div>
 
-                <p class="mb-4">Software engineer（JavaとかDBとかAWSとか） 空前絶後のKotlinブーム中</p>
+                <p class="mb-4">
+                    Hallo
+                </p>
 
                 <ul class="card-profile-stats">
                     <li class="card-profile-stat">
-                        <a href="#" class="text-inherit">
+                        <a href="following" class="text-inherit">
                             フォロー
                             <strong class="d-block">30</strong>
                         </a>
                     </li>
                     <li class="card-profile-stat">
-                        <a href="#" class="text-inherit">
+                        <a href="followers" class="text-inherit">
                             フォロワー
                             <strong class="d-block">7</strong>
                         </a>
@@ -41,7 +43,7 @@
     <div class="col-lg-6">
         <ul class="list-group media-list-stream mb-4">
             <li class="media list-group-item p-4 {{ $errors->has('body') ? 'has-danger' : '' }}">
-                <form method="POST" action="#" class="input-group">
+                <form method="POST" action=# class="input-group">
                     {{ csrf_field() }}
 
                     <input name="body" type="text" class="form-control" placeholder="いまどうしてる？">
@@ -58,7 +60,11 @@
                     </div>
                 @endif
             </li>
-            @include('fragments.tweet')
+           @foreach($tweets as $tweet)
+               <tr>
+                   @include('fragments.tweet')
+               </tr>
+            @endforeach
         </ul>
     </div>
 

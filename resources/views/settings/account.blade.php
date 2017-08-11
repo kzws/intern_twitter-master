@@ -15,9 +15,9 @@
                 <strong>アカウント</strong>
             </div>
             <div class="card-block">
-                <form method="POST" action="#">
+                <form method="POST" action="{{ route('updateAccount') }}">
                     {{ csrf_field() }}
-                    {{ method_field('PUT') }}
+
 
                     <div class="form-group row {{ $errors->has('url_name') ? ' has-danger' : '' }}">
                         <label for="url_name" class="col-4 col-form-label">ユーザー名</label>
